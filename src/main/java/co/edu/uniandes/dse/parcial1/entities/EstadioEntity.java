@@ -8,5 +8,11 @@ import lombok.Data;
 public class EstadioEntity extends BaseEntity {
 
     private String nombre;
-    private Long precioAlquiler;
+    private Long precio;
+    private int  capacidad;
+
+    @PodamExclude
+	@OneToMany(mappedBy = "estadio")
+	private List<ConciertoEntity> conciertos = new ArrayList<>();
+
 }

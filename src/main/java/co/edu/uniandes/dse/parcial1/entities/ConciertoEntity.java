@@ -9,4 +9,13 @@ public class ConciertoEntity extends BaseEntity {
 
     private String nombre;
     private Long presupuesto;
+    private int   aforo;
+
+    @Temporal(TemporalType.DATE)
+    private Date   fecha;
+
+    @PodamExclude
+	@ManyToOne
+	private EstadioEntity estadio;
+
 }
